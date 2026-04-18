@@ -13,6 +13,13 @@ check.txt
 llms.txt
 *.log
 error_log
+temp.txt
+
+# Archive files
+*.zip
+*.rar
+*.7z
+*.tar.gz
 
 # AI tool files
 .gemini/
