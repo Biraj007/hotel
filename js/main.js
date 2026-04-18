@@ -245,42 +245,6 @@ $(function () {
   // Apply immediately in case it's already rendered
   fixOwlAccessibility();
 
-  //------- Track Navbar Call Button Click --------//
-  //------- Track Navbar Call Button Click --------//
-  $('#navbar-call-btn').on('click', function () {
-    window.dataLayer = window.dataLayer || [];
-
-    // 1. Fire the General Navbar Event
-    window.dataLayer.push({
-      'event': 'navbar_call_click',
-      'category': 'Engagement',
-      'action': 'Click',
-      'label': 'Navbar Call Button'
-    });
-
-  });
-});
-
-//------- Track Footer Phone Clicks --------//
-$('.footer-phone-link').on('click', function () {
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'footer_phone_click',
-    'category': 'Engagement',
-    'action': 'Click',
-    'label': 'Footer Phone Link' // + $(this).text().trim() // Optional: add number clicked
-  });
-});
-
-//------- Track Contact Page Phone Clicks --------//
-$('.contact-page-phone-link').on('click', function () {
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'contact_page_phone_click',
-    'category': 'Engagement',
-    'action': 'Click',
-    'label': 'Contact Page Phone Link'
-  });
 });
 
 /* ============================================== */
