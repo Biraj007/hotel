@@ -1,0 +1,21 @@
+# Editor & IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temp / scratch files
+check.txt
+llms.txt
+*.log
+error_log
+
+# AI tool files
+.gemini/
+
+# Node (if ever used)
+node_modules/

@@ -1,0 +1,332 @@
+# ============================================================
+# Disable ModSecurity to fix 406 errors for Bingbot
+# ============================================================
+<IfModule mod_security.c>
+  SecFilterEngine Off
+  SecFilterScanPost Off
+  SecRuleEngine Off
+</IfModule>
+
+# ============================================================
+# Core Rewrite Engine
+# ============================================================
+AddDefaultCharset UTF-8
+
+# ============================================================
+# Security Headers
+# ============================================================
+<IfModule mod_headers.c>
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    Header set Content-Security-Policy "default-src 'self' https: data: 'unsafe-inline' 'unsafe-eval';"
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>
+
+RewriteEngine On
+RewriteBase /
+
+# Force non-www to www (canonical domain)
+RewriteCond %{HTTP_HOST} ^adbkanvas\.com$ [NC]
+RewriteRule ^(.*)$ https://www.adbkanvas.com/$1 [R=301,L]
+
+# Custom 404 Error Page
+ErrorDocument 404 /404.html
+
+# ============================================================
+# Canonical Duplicate Fixes (Strip tracking params & /index)
+# ============================================================
+
+# Redirect /index or /index.html to homepage (only if explicitly requested)
+RewriteCond %{THE_REQUEST} \s/index(\.html?)?\s [NC]
+RewriteRule ^index(\.html)?$ https://www.adbkanvas.com/ [R=301,L]
+
+# Strip Facebook tracking parameter (fbclid) - redirect to clean URL
+RewriteCond %{QUERY_STRING} (^|&)fbclid= [NC]
+RewriteRule ^(.*)$ https://www.adbkanvas.com/$1? [R=301,L]
+
+# Strip LinkedIn tracking parameter (trk) - redirect to clean URL
+RewriteCond %{QUERY_STRING} (^|&)trk= [NC]
+RewriteRule ^(.*)$ https://www.adbkanvas.com/$1? [R=301,L]
+
+# ============================================================
+# Optimized 301 Redirects (One-Hop SEO)
+# Move specific redirects here to catch HTTP requests before force rules
+# ============================================================
+
+# # Policy & Info Pages (Old names to New)
+RewriteRule ^Mandarmani_Servii?ces(\.html)?/?$ https://www.adbkanvas.com/mandarmani/mandarmani-services.html [R=301,L,NC]
+RewriteRule ^Mandarmani_Activities(\.html)?/?$ https://www.adbkanvas.com/mandarmani/mandarmani-activities.html [R=301,L,NC]
+RewriteRule ^Lataguri_Activities(\.html)?/?$ https://www.adbkanvas.com/lataguri/lataguri-activities.html [R=301,L,NC]
+RewriteRule ^Lataguri_Services(\.html)?/?$ https://www.adbkanvas.com/lataguri/lataguri-services.html [R=301,L,NC]
+RewriteRule ^Terms(\.html)?/?$ https://www.adbkanvas.com/terms-and-conditions.html [R=301,L,NC]
+RewriteRule ^Privacy(\.html)?/?$ https://www.adbkanvas.com/privacy-policy.html [R=301,L,NC]
+RewriteRule ^cancelpol(\.html)?/?$ https://www.adbkanvas.com/cancellation-policy.html [R=301,L,NC]
+RewriteRule ^aboutus(\.html)?/?$ https://www.adbkanvas.com/about-us.html [R=301,L,NC]
+
+# OLD ROOT-LEVEL redirects -> NEW FOLDER paths (301 for SEO continuity)
+RewriteRule ^mandarmani\.html$ https://www.adbkanvas.com/mandarmani/mandarmani.html [R=301,L,NC]
+RewriteRule ^mandarmani-activities\.html$ https://www.adbkanvas.com/mandarmani/mandarmani-activities.html [R=301,L,NC]
+RewriteRule ^mandarmani-services\.html$ https://www.adbkanvas.com/mandarmani/mandarmani-services.html [R=301,L,NC]
+RewriteRule ^lataguri\.html$ https://www.adbkanvas.com/lataguri/lataguri.html [R=301,L,NC]
+RewriteRule ^lataguri-activities\.html$ https://www.adbkanvas.com/lataguri/lataguri-activities.html [R=301,L,NC]
+RewriteRule ^lataguri-services\.html$ https://www.adbkanvas.com/lataguri/lataguri-services.html [R=301,L,NC]
+
+# OLD ROOT-LEVEL room pages -> NEW mandarmani/rooms/ paths
+RewriteRule ^cottage-room\.html$ https://www.adbkanvas.com/mandarmani/rooms/cottage-room.html [R=301,L,NC]
+RewriteRule ^exclusive-picasso-room\.html$ https://www.adbkanvas.com/mandarmani/rooms/exclusive-picasso-room.html [R=301,L,NC]
+RewriteRule ^executive-4-bedroom\.html$ https://www.adbkanvas.com/mandarmani/rooms/executive-4-bedroom.html [R=301,L,NC]
+RewriteRule ^executive-5-bedroom\.html$ https://www.adbkanvas.com/mandarmani/rooms/executive-5-bedroom.html [R=301,L,NC]
+RewriteRule ^executive-6-bedroom\.html$ https://www.adbkanvas.com/mandarmani/rooms/executive-6-bedroom.html [R=301,L,NC]
+RewriteRule ^grand-van-gogh-room\.html$ https://www.adbkanvas.com/mandarmani/rooms/grand-van-gogh-room.html [R=301,L,NC]
+RewriteRule ^honeymoon-raphael-room\.html$ https://www.adbkanvas.com/mandarmani/rooms/honeymoon-raphael-room.html [R=301,L,NC]
+RewriteRule ^luxurious-angelo-room\.html$ https://www.adbkanvas.com/mandarmani/rooms/luxurious-angelo-room.html [R=301,L,NC]
+RewriteRule ^premium-da-vinci-room\.html$ https://www.adbkanvas.com/mandarmani/rooms/premium-da-vinci-room.html [R=301,L,NC]
+RewriteRule ^renoir-luxury-room\.html$ https://www.adbkanvas.com/mandarmani/rooms/renoir-luxury-room.html [R=301,L,NC]
+RewriteRule ^suite-monet-room\.html$ https://www.adbkanvas.com/mandarmani/rooms/suite-monet-room.html [R=301,L,NC]
+
+# OLD ROOT-LEVEL Lataguri room pages -> NEW lataguri/rooms/ paths
+RewriteRule ^double-bed-lataguri\.html$ https://www.adbkanvas.com/lataguri/rooms/double-bed-lataguri.html [R=301,L,NC]
+RewriteRule ^luxury-cottage-lataguri\.html$ https://www.adbkanvas.com/lataguri/rooms/luxury-cottage-lataguri.html [R=301,L,NC]
+RewriteRule ^triple-bed-lataguri\.html$ https://www.adbkanvas.com/lataguri/rooms/triple-bed-lataguri.html [R=301,L,NC]
+
+# OLD rooms/ folder -> new folder paths
+RewriteRule ^rooms/cottage-room\.html$ https://www.adbkanvas.com/mandarmani/rooms/cottage-room.html [R=301,L,NC]
+RewriteRule ^rooms/exclusive-picasso-room\.html$ https://www.adbkanvas.com/mandarmani/rooms/exclusive-picasso-room.html [R=301,L,NC]
+RewriteRule ^rooms/executive-4-bedroom\.html$ https://www.adbkanvas.com/mandarmani/rooms/executive-4-bedroom.html [R=301,L,NC]
+RewriteRule ^rooms/executive-5-bedroom\.html$ https://www.adbkanvas.com/mandarmani/rooms/executive-5-bedroom.html [R=301,L,NC]
+RewriteRule ^rooms/executive-6-bedroom\.html$ https://www.adbkanvas.com/mandarmani/rooms/executive-6-bedroom.html [R=301,L,NC]
+RewriteRule ^rooms/grand-van-gogh-room\.html$ https://www.adbkanvas.com/mandarmani/rooms/grand-van-gogh-room.html [R=301,L,NC]
+RewriteRule ^rooms/honeymoon-raphael-room\.html$ https://www.adbkanvas.com/mandarmani/rooms/honeymoon-raphael-room.html [R=301,L,NC]
+RewriteRule ^rooms/luxurious-angelo-room\.html$ https://www.adbkanvas.com/mandarmani/rooms/luxurious-angelo-room.html [R=301,L,NC]
+RewriteRule ^rooms/premium-da-vinci-room\.html$ https://www.adbkanvas.com/mandarmani/rooms/premium-da-vinci-room.html [R=301,L,NC]
+RewriteRule ^rooms/renoir-luxury-room\.html$ https://www.adbkanvas.com/mandarmani/rooms/renoir-luxury-room.html [R=301,L,NC]
+RewriteRule ^rooms/suite-monet-room\.html$ https://www.adbkanvas.com/mandarmani/rooms/suite-monet-room.html [R=301,L,NC]
+RewriteRule ^rooms/double-bed-lataguri\.html$ https://www.adbkanvas.com/lataguri/rooms/double-bed-lataguri.html [R=301,L,NC]
+RewriteRule ^rooms/luxury-cottage-lataguri\.html$ https://www.adbkanvas.com/lataguri/rooms/luxury-cottage-lataguri.html [R=301,L,NC]
+RewriteRule ^rooms/triple-bed-lataguri\.html$ https://www.adbkanvas.com/lataguri/rooms/triple-bed-lataguri.html [R=301,L,NC]
+
+# Room Pages - Short URL aliases -> new paths
+RewriteRule ^e4b(\.html)?/?$ https://www.adbkanvas.com/mandarmani/rooms/executive-4-bedroom.html [R=301,L,NC]
+RewriteRule ^e5b(\.html)?/?$ https://www.adbkanvas.com/mandarmani/rooms/executive-5-bedroom.html [R=301,L,NC]
+RewriteRule ^e6b(\.html)?/?$ https://www.adbkanvas.com/mandarmani/rooms/executive-6-bedroom.html [R=301,L,NC]
+RewriteRule ^cottage(\.html)?/?$ https://www.adbkanvas.com/mandarmani/rooms/cottage-room.html [R=301,L,NC]
+RewriteRule ^luxangelo(\.html)?/?$ https://www.adbkanvas.com/mandarmani/rooms/luxurious-angelo-room.html [R=301,L,NC]
+RewriteRule ^gvg(\.html)?/?$ https://www.adbkanvas.com/mandarmani/rooms/grand-van-gogh-room.html [R=301,L,NC]
+RewriteRule ^pdv(\.html)?/?$ https://www.adbkanvas.com/mandarmani/rooms/premium-da-vinci-room.html [R=301,L,NC]
+RewriteRule ^pica(\.html)?/?$ https://www.adbkanvas.com/mandarmani/rooms/exclusive-picasso-room.html [R=301,L,NC]
+RewriteRule ^sm(\.html)?/?$ https://www.adbkanvas.com/mandarmani/rooms/suite-monet-room.html [R=301,L,NC]
+RewriteRule ^Renoir-luxuryRoom(\.html)?/?$ https://www.adbkanvas.com/mandarmani/rooms/renoir-luxury-room.html [R=301,L,NC]
+RewriteRule ^hmr(\.html)?/?$ https://www.adbkanvas.com/mandarmani/rooms/honeymoon-raphael-room.html [R=301,L,NC]
+RewriteRule ^lc(\.html)?/?$ https://www.adbkanvas.com/lataguri/rooms/luxury-cottage-lataguri.html [R=301,L,NC]
+RewriteRule ^db(\.html)?/?$ https://www.adbkanvas.com/lataguri/rooms/double-bed-lataguri.html [R=301,L,NC]
+RewriteRule ^tb(\.html)?/?$ https://www.adbkanvas.com/lataguri/rooms/triple-bed-lataguri.html [R=301,L,NC]
+
+# Clean URL Folder Mappings
+RewriteRule ^lataguri/?$ https://www.adbkanvas.com/lataguri/lataguri.html [R=301,L,NC]
+RewriteRule ^mandarmani/?$ https://www.adbkanvas.com/mandarmani/mandarmani.html [R=301,L,NC]
+RewriteRule ^contact/?$ https://www.adbkanvas.com/contact.html [R=301,L,NC]
+RewriteRule ^gallery/?$ https://www.adbkanvas.com/gallery.html [R=301,L,NC]
+RewriteRule ^blog/?$ https://www.adbkanvas.com/blog.html [R=301,L,NC]
+RewriteRule ^about-us/?$ https://www.adbkanvas.com/about-us.html [R=301,L,NC]
+
+# Blog clean URLs
+RewriteRule ^blog[1-6]/?$ https://www.adbkanvas.com/$0.html [R=301,L,NC]
+RewriteRule ^new/?$ https://www.adbkanvas.com/index.html [R=301,L,NC]
+
+# ============================================================
+# Image Path Fixes (from visitor logs)
+# ============================================================
+
+# Old image paths to new webp versions
+RewriteRule ^img/home/bed_Icon\.png$ https://www.adbkanvas.com/img/home/bed-icon.webp [R=301,L,NC]
+
+# VTT caption file redirect
+RewriteRule ^options\.vtt$ https://www.adbkanvas.com/captions.vtt [R=301,L,NC]
+
+# Block WordPress vulnerability probes (DISABLED - was causing Bingbot 410 errors)
+# RewriteRule ^wp-content/.*$ - [G,L]
+# RewriteRule ^wp-admin/?.*$ - [G,L]
+# RewriteRule ^wp-includes/.*$ - [G,L]
+# RewriteRule ^wordpress/?.*$ - [G,L]
+
+# ============================================================
+# Google Search Console 404 Fixes (Jan 2026)
+# ============================================================
+
+# Old activity URLs
+RewriteRule ^activity/bonfire-in-mandarmani-resorts-lataguri-bonfire/?$ https://www.adbkanvas.com/mandarmani-activities.html [R=301,L,NC]
+RewriteRule ^activity/forest-view-deck/?$ https://www.adbkanvas.com/lataguri-activities.html [R=301,L,NC]
+
+# Old accommodation/booking URLs
+RewriteRule ^mandarmani-hotel-booking/?$ https://www.adbkanvas.com/mandarmani.html [R=301,L,NC]
+RewriteRule ^accommodation/executive-4-bed/?$ https://www.adbkanvas.com/executive-4-bedroom.html [R=301,L,NC]
+RewriteRule ^accommodation/premium-da-vinci/?$ https://www.adbkanvas.com/premium-da-vinci-room.html [R=301,L,NC]
+
+# Old Lataguri resort URLs
+RewriteRule ^best-resorts-in-lataguri-stay-at-your-comfort-place/best-places-stay-dooars-accommodations/?$ https://www.adbkanvas.com/lataguri.html [R=301,L,NC]
+RewriteRule ^best-resorts-in-lataguri.*$ https://www.adbkanvas.com/lataguri.html [R=301,L,NC]
+
+# Old about/info URLs
+RewriteRule ^top-hotels-in-mandarmani-and-lataguri-about-us/?$ https://www.adbkanvas.com/about-us.html [R=301,L,NC]
+
+# Cancellation policy (clean URL)
+RewriteRule ^cancellation-policy/?$ https://www.adbkanvas.com/cancellation-policy.html [R=301,L,NC]
+
+# Typo in room name (rooms vs room)
+RewriteRule ^renoir-luxury-rooms(\\.html)?/?$ https://www.adbkanvas.com/renoir-luxury-room.html [R=301,L,NC]
+
+# RSS feed (redirect to blog)
+RewriteRule ^feed/?$ https://www.adbkanvas.com/blog.html [R=301,L,NC]
+
+# ============================================================
+# AllBlogs Legacy URL Redirects (Only for truly deleted paths)
+# ============================================================
+# NOTE: Do NOT redirect actual blog files - they exist and should be served
+# Only redirect non-existent old URL patterns
+
+# Old pagination without .html extension
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^blogsPegi([2-4])/?$ https://www.adbkanvas.com/blogsPegi$1.html [R=301,L,NC]
+
+# Additional old page names
+RewriteRule ^privacy(\\.html)?/?$ https://www.adbkanvas.com/privacy-policy.html [R=301,L,NC]
+RewriteRule ^c4b(\\.html)?/?$ https://www.adbkanvas.com/executive-4-bedroom.html [R=301,L,NC]
+RewriteRule ^Terms(\\.html)?/?$ https://www.adbkanvas.com/terms-and-conditions.html [R=301,L,NC]
+RewriteRule ^Themes?(\\.html)?/?$ https://www.adbkanvas.com/ [R=301,L,NC]
+
+# Activity folder redirects
+RewriteRule ^Activity/CottLight(\\.html)?/?$ https://www.adbkanvas.com/mandarmani-activities.html [R=301,L,NC]
+RewriteRule ^Activity/.*$ https://www.adbkanvas.com/mandarmani-activities.html [R=301,L,NC]
+
+# ============================================================
+# New 404 Fixes from Server Logs (Jan 2026)
+# ============================================================
+
+# Short URL aliases (from bot requests)
+RewriteRule ^cancelpol/?$ https://www.adbkanvas.com/cancellation-policy.html [R=301,L,NC]
+RewriteRule ^aboutus/?$ https://www.adbkanvas.com/about-us.html [R=301,L,NC]
+RewriteRule ^contact/?$ https://www.adbkanvas.com/contact.html [R=301,L,NC]
+RewriteRule ^pdv/?$ https://www.adbkanvas.com/premium-da-vinci-room.html [R=301,L,NC]
+RewriteRule ^e4b/?$ https://www.adbkanvas.com/executive-4-bedroom.html [R=301,L,NC]
+# Fixed: These files exist, so redirect clean URLs to actual files (not blog.html)
+RewriteRule ^blog4/?$ https://www.adbkanvas.com/blog4.html [R=301,L,NC]
+RewriteRule ^blogsPegi3/?$ https://www.adbkanvas.com/blogsPegi3.html [R=301,L,NC]
+
+# Old service page names (case-insensitive)
+RewriteRule ^Mandarmani_Serviices(\.html)?/?$ https://www.adbkanvas.com/mandarmani-services.html [R=301,L,NC]
+RewriteRule ^Lataguri_Services(\.html)?/?$ https://www.adbkanvas.com/lataguri-services.html [R=301,L,NC]
+
+# Old image paths (.jpg to .webp)
+RewriteRule ^img/Rooms/Lataguri/Cottage/Cottage%201\.jpg$ /img/Rooms/Lataguri/Cottage/Cottage%201.webp [R=301,L,NC]
+RewriteRule ^img/Services(.*)\.jpg$ /img/Services$1.webp [R=301,L,NC]
+
+# Missing Apple touch icons (serve logo instead)
+RewriteRule ^apple-touch-icon.*\.png$ /img/LogoNew.webp [R=301,L,NC]
+
+# Missing CSS file (return 410 gone)
+RewriteRule ^ImageZoom\.css$ - [G,L]
+
+# 406.shtml error page (return 410 gone)
+RewriteRule ^406\.shtml$ - [G,L]
+
+# ============================================================
+# Force HTTPS & WWW (Fall-through for all other requests)
+# ============================================================
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Force www
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+
+# ============================================================
+# Performance & Compression (Enhanced)
+# ============================================================
+<IfModule mod_deflate.c>
+  # Compress HTML, CSS, JavaScript, Text, XML and fonts
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+  AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/json application/ld+json
+  AddOutputFilterByType DEFLATE application/xml application/rss+xml application/atom+xml
+  AddOutputFilterByType DEFLATE application/xhtml+xml application/vnd.ms-fontobject
+  AddOutputFilterByType DEFLATE font/ttf font/otf font/woff font/woff2 font/x-woff
+  AddOutputFilterByType DEFLATE image/svg+xml image/x-icon
+  
+  # Remove browser bugs (only needed for really old browsers)
+  BrowserMatch ^Mozilla/4 gzip-only-text/html
+  BrowserMatch ^Mozilla/4\.0[678] no-gzip
+  BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+  Header append Vary User-Agent
+</IfModule>
+
+# ============================================================
+# Browser Caching (Extended - 1 Year for Static Assets)
+# ============================================================
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+  
+  # HTML - No cache (always fresh)
+  ExpiresByType text/html "access plus 0 seconds"
+  
+  # CSS & JavaScript - 1 year (use versioning for updates)
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+  
+  # Images - 1 year
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType image/vnd.microsoft.icon "access plus 1 year"
+  
+  # Fonts - 1 year
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType font/otf "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType application/font-woff "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+  
+  # Video & Audio - 1 year
+  ExpiresByType video/mp4 "access plus 1 year"
+  ExpiresByType video/webm "access plus 1 year"
+  ExpiresByType audio/mpeg "access plus 1 year"
+</IfModule>
+
+# Cache-Control Headers
+<IfModule mod_headers.c>
+  # 1 year for static assets
+  <FilesMatch "\.(ico|jpg|jpeg|png|gif|webp|svg|css|js|woff|woff2|ttf|otf|mp4|webm)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  
+  # Allow caching with revalidation for HTML
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# Re-enable ETags for efficient revalidation
+FileETag MTime Size
+
+# ============================================================
+# Security
+# ============================================================
+<IfModule mod_headers.c>
+  Header set X-XSS-Protection "1; mode=block"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Hotlink Protection
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^https?://(www\.)?adbkanvas\.com [NC]
+RewriteCond %{HTTP_REFERER} !^https?://(www\.)?(google|facebook|instagram)\. [NC]
+RewriteRule \.(jpg|jpeg|png|gif|webp|svg)$ - [F,NC]

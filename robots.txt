@@ -1,0 +1,61 @@
+# robots.txt for ADB Kanvas Hotels & Resorts
+# Updated: 2026-04-19
+
+User-agent: *
+Allow: /
+Disallow: /contact_process.php
+Disallow: /.htaccess
+Disallow: /error_log
+Disallow: /cgi-bin/
+Disallow: /.vscode/
+Disallow: /vendors/
+Disallow: /js/
+Disallow: /css/
+
+# Sitemap
+Sitemap: https://www.adbkanvas.com/sitemap.xml
+
+# AI / LLM Crawlers - Allow all for maximum AI visibility
+
+# OpenAI
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Google Gemini
+User-agent: Google-Extended
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Amazon
+User-agent: Amazonbot
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# Common Crawl (used by many AI models)
+User-agent: CCBot
+Allow: /
