@@ -14,10 +14,12 @@ This project is a fully responsive, SEO-optimized web application designed to pr
 
 ## 🚀 Key Features
 
+- **Static Component Generation**: Python-based build script (`build.py`) automatically injects shared header/footer components across 30+ pages and dynamically fixes relative paths.
 - **Location-Based Routing**: Dedicated sections for both Mandarmani and Lataguri with standardized navigation.
 - **Room Management**: Organized folder structure for luxury rooms and cottages, ensuring clean URLs and better SEO.
 - **SEO Ready**: 
-  - Validated `sitemap.xml` and `robots.txt`.
+  - Auto-generated `sitemap.xml` on every build.
+  - Validated `robots.txt`.
   - Optimized Meta Tags and Canonical URLs.
   - High-performance WebP image compression.
 - **Premium UI/UX**:
@@ -38,6 +40,7 @@ This project is a fully responsive, SEO-optimized web application designed to pr
 | **Assets** | WebP Compression, Lazy-Loading |
 | **Scripts** | jQuery, Owl Carousel, Lightbox |
 | **Backend** | PHP (Contact Processing) |
+| **Build Tools** | Python (`build.py` for Static Component Generation) |
 
 ---
 
@@ -45,6 +48,8 @@ This project is a fully responsive, SEO-optimized web application designed to pr
 
 ```text
 /
+├── components/         # Shared HTML templates (Header/Footer)
+├── build.py            # Python script to inject components & generate sitemap
 ├── mandarmani/         # Mandarmani Beach Resort pages & activities
 │   └── rooms/          # Individual luxury room pages
 ├── lataguri/           # Lataguri Jungle Resort pages & activities
