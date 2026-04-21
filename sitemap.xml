@@ -1,230 +1,173 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-
-  <!-- Core Pages -->
-  <url>
-    <loc>https://www.adbkanvas.com/</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://www.adbkanvas.com/img/Mandarmani%20Banner/ADB_Web_Home_Banner_1.webp</image:loc>
-      <image:title>ADB Kanvas Hotels &amp; Resorts</image:title>
-    </image:image>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.adbkanvas.com/about-us.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.adbkanvas.com/blog.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.adbkanvas.com/cancellation-policy.html</loc>
+    <lastmod>2026-04-22</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.adbkanvas.com/contact.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-22</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.adbkanvas.com/gallery.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.adbkanvas.com/blog.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://www.adbkanvas.com/</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.adbkanvas.com/privacy-policy.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.adbkanvas.com/terms-and-conditions.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://www.adbkanvas.com/cancellation-policy.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-  <!-- Mandarmani Section -->
-  <url>
-    <loc>https://www.adbkanvas.com/mandarmani/mandarmani.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://www.adbkanvas.com/img/Mandarmani%20Banner/ADB_Mandarmani%20Section%20(Banner)1.webp</image:loc>
-      <image:title>ADB Kanvas Mandarmani Beach Resort</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.adbkanvas.com/mandarmani/mandarmani-activities.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.adbkanvas.com/mandarmani/mandarmani-services.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Mandarmani Rooms -->
-  <url>
-    <loc>https://www.adbkanvas.com/mandarmani/rooms/cottage-room.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://www.adbkanvas.com/img/mandarmani/Cottage.webp</image:loc>
-      <image:title>Cottage Room at ADB Kanvas Mandarmani</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.adbkanvas.com/mandarmani/rooms/exclusive-picasso-room.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-22</lastmod>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://www.adbkanvas.com/mandarmani/rooms/executive-4-bedroom.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.adbkanvas.com/mandarmani/rooms/executive-5-bedroom.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.adbkanvas.com/mandarmani/rooms/executive-6-bedroom.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.adbkanvas.com/mandarmani/rooms/grand-van-gogh-room.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.adbkanvas.com/mandarmani/rooms/honeymoon-raphael-room.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.adbkanvas.com/mandarmani/rooms/luxurious-angelo-room.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.adbkanvas.com/mandarmani/rooms/premium-da-vinci-room.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.adbkanvas.com/mandarmani/rooms/renoir-luxury-room.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.adbkanvas.com/mandarmani/rooms/suite-monet-room.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Lataguri Section -->
-  <url>
-    <loc>https://www.adbkanvas.com/lataguri/lataguri.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://www.adbkanvas.com/img/Mandarmani%20Banner/ADB_Lataguri%20Section%20(Banner)1.webp</image:loc>
-      <image:title>ADB Kanvas Lataguri Jungle Resort</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.adbkanvas.com/lataguri/lataguri-activities.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.adbkanvas.com/lataguri/lataguri-services.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Lataguri Rooms -->
-  <url>
-    <loc>https://www.adbkanvas.com/lataguri/rooms/double-bed-lataguri.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.adbkanvas.com/lataguri/rooms/luxury-cottage-lataguri.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.adbkanvas.com/lataguri/rooms/triple-bed-lataguri.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Active Blog Posts -->
   <url>
     <loc>https://www.adbkanvas.com/blogs/Defines-Luxury-in-Mandarmani.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.adbkanvas.com/blogs/The-Best-Time-to-Visit-Mandarmani.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.adbkanvas.com/blogs/Thrills-and-Tranquility.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.adbkanvas.com/blogs/The-Adb-Kanvas-Mandarmani-Difference.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://www.adbkanvas.com/blogs/index.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.adbkanvas.com/blogs/Luxury-on-a-Budget.html</loc>
-    <lastmod>2026-04-19</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.7</priority>
   </url>
-
+  <url>
+    <loc>https://www.adbkanvas.com/blogs/The-Adb-Kanvas-Mandarmani-Difference.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.adbkanvas.com/blogs/The-Best-Time-to-Visit-Mandarmani.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.adbkanvas.com/blogs/Thrills-and-Tranquility.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.adbkanvas.com/lataguri/lataguri-activities.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.adbkanvas.com/lataguri/lataguri-services.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.adbkanvas.com/lataguri/lataguri.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.adbkanvas.com/mandarmani/mandarmani-activities.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.adbkanvas.com/mandarmani/mandarmani-services.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.adbkanvas.com/mandarmani/mandarmani.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.adbkanvas.com/lataguri/rooms/double-bed-lataguri.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.adbkanvas.com/lataguri/rooms/luxury-cottage-lataguri.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.adbkanvas.com/lataguri/rooms/triple-bed-lataguri.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.adbkanvas.com/mandarmani/rooms/cottage-room.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.adbkanvas.com/mandarmani/rooms/exclusive-picasso-room.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.adbkanvas.com/mandarmani/rooms/executive-4-bedroom.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.adbkanvas.com/mandarmani/rooms/executive-5-bedroom.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.adbkanvas.com/mandarmani/rooms/executive-6-bedroom.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.adbkanvas.com/mandarmani/rooms/grand-van-gogh-room.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.adbkanvas.com/mandarmani/rooms/honeymoon-raphael-room.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.adbkanvas.com/mandarmani/rooms/luxurious-angelo-room.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.adbkanvas.com/mandarmani/rooms/premium-da-vinci-room.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.adbkanvas.com/mandarmani/rooms/renoir-luxury-room.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.adbkanvas.com/mandarmani/rooms/suite-monet-room.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <priority>0.9</priority>
+  </url>
 </urlset>
